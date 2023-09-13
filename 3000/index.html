@@ -11,6 +11,15 @@
     <h1 id="demo"></h1>
 
     <script>
+        function blockMainThreadFor(ms) {
+            const start = Date.now();
+            while (Date.now() - start < ms) {
+                //blocking
+            }
+        }
+
+        blockMainThreadFor(3000);
+
         document.getElementById("demo").innerHTML = "Paragraph changed.";
     </script>
 </body>
